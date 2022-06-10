@@ -61,34 +61,6 @@ public class Commands
 		}
 	}
 	
-	public class SocketIO implements DefaultIO // SocketIO implementation of DefalutIO (input and output with sockets)
-	{
-
-		@Override
-		public String readText() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-
-		@Override
-		public void write(String text) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public float readVal() {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
-		@Override
-		public void write(float val) {
-			// TODO Auto-generated method stub
-			
-		}
-	}
-	
 	// the shared state of all commands
 	private class SharedState
 	{
@@ -146,19 +118,19 @@ public class Commands
 		public void execute()
 		{
 			// UPLOAD CSV FILE
-			dio.write("Please upload your local train CSV file.\n");
+			dio.write("Please upload your local train CSV file.");
 			/*
 				Send the csv file path to the server (train) 										TODO
 				dio.write(dio.readText()); // Send csv values to the server							TODO
 				need to implement the write/read on the StandardIO (console) and SocketIO (socket) to allow the above
 			*/
-			dio.write("Upload complete.\n");
-			dio.write("Please upload your local test CSV file.\n");
+			dio.write("Upload complete.");
+			dio.write("Please upload your local test CSV file.");
 			//((StandardIO) dio).readText(); // StandardIO read (input from user)									TODO
 			/*
 				Send the csv file path to the server (train) 										TODO
 			*/
-			dio.write("Upload complete.\n");
+			dio.write("Upload complete.");
 			// TEST:
 			for (int i = 0; i < 404; i++) // TODO
 			{
@@ -185,8 +157,8 @@ public class Commands
 		public void execute()
 		{
 			// ALGORITHM SETTINGS (change threshold value)
-			dio.write("The current correlation threshold is 0.9\n");  // TODO change 0.9 to variable from anomaly detector
-			dio.write("Type a new threshold\n");
+			dio.write("The current correlation threshold is 0.9");  // TODO change 0.9 to variable from anomaly detector
+			dio.write("Type a new threshold");
 			
 			/*Add writing new value of the threshold*/ //TODO
 			while (true) // As long as a valid threshold value is not given (0 <= threshold <= 1)
@@ -195,7 +167,7 @@ public class Commands
 				//System.out.println(threshold);  									  // TODO DELETE PRINT (new threshold value)
 				if (Float.parseFloat(threshold) > 1 || Float.parseFloat(threshold) < 0) // if a valid threshold value is given
 				{
-					dio.write("please choose a value between 0 and 1.\n");
+					dio.write("please choose a value between 0 and 1.");
 				}
 				
 				else // if a valid threshold value is not given
@@ -224,7 +196,7 @@ public class Commands
 		@Override
 		public void execute()
 		{
-			dio.write("anomaly detection complete.\n");
+			dio.write("anomaly detection complete.");
 		}		
 	}
 	
@@ -247,14 +219,14 @@ public class Commands
 		public void execute()
 		{
 			/*Display result of anomalies file*/ 			// TODO
-			dio.write("73	 A-B\n");
-			dio.write("74	 A-B\n");
-			dio.write("75	 A-B\n");
-			dio.write("76	 A-B\n");
-			dio.write("133	 C-D\n");
-			dio.write("134	 C-D\n");
-			dio.write("135	 C-D\n");
-			dio.write("Done.\n");
+			dio.write("73	 A-B");
+			dio.write("74	 A-B");
+			dio.write("75	 A-B");
+			dio.write("76	 A-B");
+			dio.write("133	 C-D");
+			dio.write("134	 C-D");
+			dio.write("135	 C-D");
+			dio.write("Done.");
 		}		
 	}
 	
@@ -277,7 +249,7 @@ public class Commands
 		public void execute()
 		{
 			int scenario = 0; 																				// TODO DELETE
-			dio.write("Please upload your local anomalies file.\n");
+			dio.write("Please upload your local anomalies file.");
 			/*Upload the anomalies file by writing to the server the name of the file*/						// TODO
 			while (true)  // TODO DELETE
 			{
@@ -315,36 +287,36 @@ public class Commands
 			//System.out.println("complete"); // TODO DELETE
 			
 			
-			dio.write("Upload complete.\n");
+			dio.write("Upload complete.");
 			/*Some tests to check if the calculation is: False Positive / False Negative / True Positive*/
 			if (scenario == 1) // TODO DELETE
 			{
-				dio.write("True Positive Rate: 0.0\n"); // TODO DELETE
-				dio.write("False Positive Rate: 0.01\n"); // TODO DELETE
+				dio.write("True Positive Rate: 0.0"); // TODO DELETE
+				dio.write("False Positive Rate: 0.01"); // TODO DELETE
 			}
 			
 			else if (scenario == 2) // TODO DELETE
 			{
-				dio.write("True Positive Rate: 0.5\n"); // TODO DELETE
-				dio.write("False Positive Rate: 0.005\n"); // TODO DELETE
+				dio.write("True Positive Rate: 0.5"); // TODO DELETE
+				dio.write("False Positive Rate: 0.005"); // TODO DELETE
 			}
 			
 			else if (scenario == 3) // TODO DELETE
 			{
-				dio.write("True Positive Rate: 1.0\n"); // TODO DELETE
-				dio.write("False Positive Rate: 0.005\n"); // TODO DELETE
+				dio.write("True Positive Rate: 1.0"); // TODO DELETE
+				dio.write("False Positive Rate: 0.005"); // TODO DELETE
 			}
 			
 			else if (scenario == 4) // TODO DELETE
 			{
-				dio.write("True Positive Rate: 1.0\n"); // TODO DELETE
-				dio.write("False Positive Rate: 0.0\n"); // TODO DELETE
+				dio.write("True Positive Rate: 1.0"); // TODO DELETE
+				dio.write("False Positive Rate: 0.0"); // TODO DELETE
 			}
 			
 			else if (scenario == 5) // TODO DELETE
 			{
-				dio.write("True Positive Rate: 0.666\n"); // TODO DELETE
-				dio.write("False Positive Rate: 0.0\n"); // TODO DELETE
+				dio.write("True Positive Rate: 0.666"); // TODO DELETE
+				dio.write("False Positive Rate: 0.0"); // TODO DELETE
 			}
 		}		
 	}

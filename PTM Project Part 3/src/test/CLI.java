@@ -54,8 +54,8 @@ public class CLI
 		
 		while(input != 6)
 		{
-			dio.write("Welcome to the Anomaly Detection Server.\n"); // Print introduction to CLI
-			dio.write("Please choose an option:\n"); // Print introduction to CLI
+			//dio.write("Welcome to the Anomaly Detection Server.\n"); // Print introduction to CLI
+			//dio.write("Please choose an option:\n"); // Print introduction to CLI
 			
 			i = 0;
 			for (Command command : commands)
